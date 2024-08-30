@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    width: 200px;
+    height: 100vh;
+
+    padding: 20px;
+}
+
+.nav-title{
+    font-size: 18px;
+    color: #FBFCF8;
+
+    padding-left: 10px;
+}
+
+.nav-header{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-routes{ 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+}
+
+.nav-item{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    text-decoration: none;
+    color: #FBFCF8;
+
+    width: 100px;
+    padding: 3px;
+}
+
+.nav-item:hover{
+    background-color: #ccc;
+    color: #8A2BE2;
+}
