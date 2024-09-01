@@ -2,17 +2,20 @@
     padding: 0;
     margin: 0;
 }
+.navbar.expanded {
+    width: 200px;
+}
 
 nav{
-    width: 200px;
+    width: 60px;
     height: 100vh;
-
     padding: 20px;
 }
 
 .nav-title{
     font-size: 18px;
-    color: #FBFCF8;
+    color: #8A2BE2;
+    font-weight: 800;
 
     padding-left: 10px;
 }

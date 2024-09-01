@@ -1,36 +1,44 @@
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faSquareCheck, faCalendarDays, faBullseye } from '@fortawesome/free-solid-svg-icons'; // Importando ícones específicos
+import { faHouse, faSquareCheck, faCalendarDays, faBullseye, faBars, faXmark} from '@fortawesome/free-solid-svg-icons'; // Importando ícones específicos
 import '../styles/Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsExpanded(!isExpanded);
+    };
+
+
     return (
-        <>
-            <nav>
+            <nav className={`navbar ${isExpanded ? 'expanded' : 'collapseds'}`}>
                 <div className="nav-header">
-                    <div className="nav-logo">
-                        <span className="nav-title">MyBufunfa</span>
+                    <div className="nav-toggle">
+                        <button className="nav-toggle-button" onClick={toggleNavbar}>
+                        <FontAwesomeIcon icon={isExpanded ? faXmark : faBars} />
+                        </button>    
                     </div>
                     <div className="nav-routes">
                         <a className="nav-item" href="#">
                             <FontAwesomeIcon icon={faHouse} />
-                            <span>Inicial</span>
+                            {isExpanded && <span>Inicial</span>}
                         </a>
                         <a className="nav-item" href="#">
                             <FontAwesomeIcon icon={faSquareCheck} />
-                            <span>Tarefas</span>
+                            {isExpanded && <span>Tarefas</span>}
                         </a>    
                         <a className="nav-item" href="#">
                             <FontAwesomeIcon icon={faCalendarDays} />
-                            <span>Hábitos</span>
+                            {isExpanded && <span>Hábitos</span>}
                         </a>
                         <a className="nav-item" href="#">
                             <FontAwesomeIcon icon={faBullseye} />
-                            <span>Metas</span>
+                            {isExpanded && <span>Metas</span>}
                         </a>
                     </div>
                 </div>
             </nav>
-        </>
     );
 }
 
