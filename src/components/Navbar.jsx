@@ -49,13 +49,16 @@ const Navbar = () => {
     const rotatedTitles = [...titles.slice(offset), ...titles.slice(0, offset)];
 
     const NavOption = ({ icon, label, index }) => {
-        const angle = 360 / totalItems * index;
+        // Defina os ângulos manualmente para cada item, começando de -70° até +70°
+        const angles = [-70, -35, 0, 35, 70];
+        const angle = angles[index];
+
         const elementStyle = {
             transform: `rotate(${angle}deg) translate(350px) rotate(-${angle}deg)`,
         };
 
         // Aplica uma classe especial ao item na posição de ângulo 0
-        const isSelected = index === 0 ? 'selected' : '';
+        const isSelected = index === 2 ? 'selected' : '';
 
         return (
             <div className={`nav-option ${isSelected}`} style={elementStyle}>
