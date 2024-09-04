@@ -4,28 +4,46 @@ import { faHouse, faSquareCheck, faCalendarDays, faBullseye, faBars } from '@for
 import '../styles/Navbar.css';
 
 const Navbar = () => {
-    const [scrollY, setScrollY] = useState(0);
+    const icons = [faHouse, faSquareCheck, faCalendarDays, faBullseye, faBars];
+    const titles = ['Inicial', 'Tarefas', 'Calendário', 'Objetivos', 'Menu'];
+    const totalItems = icons.length;
 
-    // Função para lidar com o scroll
-    const handleScroll = () => {
-        setScrollY(window.scrollY);
+    const [offset, setOffset] = useState(0);
+
+    const handleNavigation = (direction) => {
+        if (direction === 'down') {
+            setOffset((prevOffset) => (prevOffset + 1) % totalItems);
+        } else if (direction === 'up') {
+            setOffset((prevOffset) => (prevOffset - 1 + totalItems) % totalItems);
+        }
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        const handleScroll = (event) => {
+            const sensitivityThreshold = 10;
+            if (event.deltaY > sensitivityThreshold) {
+                handleNavigation('down');
+            } else if (event.deltaY < -sensitivityThreshold) {
+                handleNavigation('up');
+            }
+        };
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'w') {
+                handleNavigation('up');
+            } else if (event.key === 's') {
+                handleNavigation('down');
+            }
+        };
+
+        window.addEventListener('wheel', handleScroll);
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('wheel', handleScroll);
+            window.removeEventListener('keydown', handleKeyDown);
+        };
     }, []);
-
-    const icons = [faHouse, faSquareCheck, faCalendarDays, faBullseye, faBars];
-    const titles = ['Inicial', 'Tarefas', 'Calendário', 'Objetivos', 'Menu'];
-    const totalItems = icons.length; // Defina o número total de itens
-
-    const calculateOffset = () => {
-        const scrollOffset = Math.floor(scrollY / 100) % totalItems; // Ajuste o divisor para controlar a sensibilidade
-        return scrollOffset;
-    };
-      
-    const offset = calculateOffset();
 
     const rotatedIcons = [...icons.slice(offset), ...icons.slice(0, offset)];
     const rotatedTitles = [...titles.slice(offset), ...titles.slice(0, offset)];
@@ -35,9 +53,12 @@ const Navbar = () => {
         const elementStyle = {
             transform: `rotate(${angle}deg) translate(350px) rotate(-${angle}deg)`,
         };
-      
+
+        // Aplica uma classe especial ao item na posição de ângulo 0
+        const isSelected = index === 0 ? 'selected' : '';
+
         return (
-            <div className="nav-option" style={elementStyle}>
+            <div className={`nav-option ${isSelected}`} style={elementStyle}>
                 <a className="nav-item" href="#">
                     <FontAwesomeIcon icon={icon} />
                     <span>{label}</span>

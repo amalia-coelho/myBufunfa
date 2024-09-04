@@ -40,3 +40,17 @@ nav{
     color: #FCFCF7;
     font-size: 20px;
 }
+
+.nav-option.selected {
+    transform: scale(1.2); /* Aumenta o tamanho do item */
+    z-index: 1; /* Coloca o item na frente */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-option.selected .nav-item {
+    color: #FFD700;
+}
+
+.nav-option.selected .nav-item span {
+    font-weight: bold; /* Deixa o texto em negrito */
+}
