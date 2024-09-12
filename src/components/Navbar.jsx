@@ -50,7 +50,7 @@ const Navbar = () => {
 
     const NavOption = ({ icon, label, index }) => {
         // Defina os ângulos manualmente para cada item, começando de -70° até +70°
-        const angles = [-70, -35, 0, 35, 70];
+        const angles = [300, 330, 0, 35, 70];
         const angle = angles[index];
 
         const elementStyle = {
