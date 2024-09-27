@@ -15,14 +15,16 @@ const Navbar = () => {
                 </button>
             </div>
             <div className="nav-options">
-                <NavItem icon={faBars} title="Página inicial" />
-                <NavItem icon={faSquareCheck} title="Planejamento" />
-                <NavItem icon={faBullseye} title="Relatórios" />
-                <NavItem icon={faUserGroup} title="Amigos" />
+                <a href="#"><NavItem icon={faBars} title="Página inicial" /></a>
+                <a href="#"><NavItem icon={faSquareCheck} title="Planejamento" /></a>
+                <a href="#"><NavItem icon={faBullseye} title="Relatórios" /></a>
+                <a href="#"><NavItem icon={faUserGroup} title="Amigos" /></a>
             </div>
             <div className="nav-footer">
                 {/* <img src=".../assets/user/default-avatar.jpg"   onError={(e) => { e.target.src = "../assets/user/default-avatar.jpg";}} /> */}
-                <FontAwesomeIcon icon={faUserNinja} className="nav-footer-item img-user-sm"/>
+                <button className="btn-user-profile">
+                    <FontAwesomeIcon icon={faUserNinja} className="nav-footer-item img-user-sm"/>
+                </button>
                 <span>Amália Coelho</span>
             </div>
         </div>

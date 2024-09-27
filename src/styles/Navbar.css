@@ -24,15 +24,19 @@
 /* MOBILE DEVICE */
 @media (max-width: 768px) {
     .background-navbar{
+        position: fixed;
+        bottom: 0;
         overflow: hidden;
         width: 100%;
-        height: 93vh;
+        height: 60vh;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         gap: 3em;
+
+        border-top: solid gray .2px;
     }
     
     .nav-header{
@@ -59,6 +63,11 @@
         flex-direction: column;
         gap: .5em;
         padding: 20px;
+    }
+
+    .nav-options a{
+        color: white;
+        text-decoration: none;
     }
     
     .nav-item{
@@ -87,11 +96,11 @@
     }
 
     .btn-action {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         
         background-color: transparent;
-        font-size: 1.5em;
+        font-size: 1em;
         color: white;
 
         border: solid 2px white;
@@ -100,5 +109,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
+        cursor: pointer;
+    }
+
+    .btn-user-profile{
+        background-color: transparent;
+        border: none;
+        border-color: transparent;
+        color: white;
     }
 }
