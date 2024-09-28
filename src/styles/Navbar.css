@@ -2,23 +2,90 @@
     padding: 0;
     margin: 0;
 }
+@media (min-width: 768px) {
+    .background-navbar{
+        height: 32vh;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        color: white;
 
-.background-navbar{
-    padding: 20px 0;
-    color: white;
-    
-    width: 500px;
-    height: 50vh;
-}
+        padding: 20px;
 
-.nav-header{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+        border-right: solid gray 1px;
+        border-bottom: solid gray 1px;
+    }
+
+    .minimized{
+        height: 100px;
+        border: none;
+    }
+
+    .nav-header{
+        display: flex;
+        gap: 1em;
+        font-size: 25px;
+    }
+
+    .nav-header .btn-action{
+        order: 1;
+        width: 35px;
+        height: 35px;
+
+        background-color: transparent;
+        border: solid white 1.5px;
+        border-radius: 8px;
+        color: white;
+        font-size: .7em;
+    }
+
+    .nav-header .app-logo{
+        order: 2;
+    }
+
+    .nav-options{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        padding: 20px 0;
+    }
+
+    .nav-options .nav-item{
+        color: white;
+        font-size: 1.2em;
+
+        display: flex;
+        gap: 1em;
+        align-items: center;
+
+        padding-left: 10px;
+    }
+
+    .nav-options .nav-item:hover{
+        color: gray;
+    }
     
-    font-size: 20px;
-    font-weight: 800;
+    .nav-options a{
+        text-decoration: none;
+    }
+
+    .nav-footer{
+        display:flex;
+        align-items: center;
+        gap: .5em;
+
+        font-size: 18px;
+    }
+
+    .nav-footer .btn-user-profile{
+        background-color: transparent;
+        border: none;
+        color: white;
+        width: 50px;
+    }
+
 }
 
 /* MOBILE DEVICE */
@@ -29,21 +96,29 @@
         overflow: hidden;
         width: 100%;
         height: 60vh;
-
+        padding: 20px 0;
+        color: white;
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: start;
         gap: 3em;
-
+        
         border-top: solid gray .2px;
     }
-
+    
     .minimized{
         height: 5vh;
     }
     
     .nav-header{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        
+        font-size: 20px;
+        font-weight: 800;
         justify-content: space-around;
         width: 100%;
     }

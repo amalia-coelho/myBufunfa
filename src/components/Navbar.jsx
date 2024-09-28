@@ -1,4 +1,4 @@
-import { useState } from 'react'; 
+import { useState, useEffect } from 'react'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserNinja, faGear, faXmark, faUserGroup, faDollarSign, faSquareCheck, faCalendarDays, faBullseye, faBars } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Navbar.css';
@@ -9,6 +9,19 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsMinimized(!isMinimized);
     }
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.ctrlKey && event.key === 'b') {
+                event.preventDefault();
+                toggleMenu();
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    });
 
     return (
         <div className={`background-navbar ${isMinimized ? 'minimized' : ''}`}>
