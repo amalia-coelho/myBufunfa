@@ -38,6 +38,10 @@
 
         border-top: solid gray .2px;
     }
+
+    .minimized{
+        height: 5vh;
+    }
     
     .nav-header{
         justify-content: space-around;
