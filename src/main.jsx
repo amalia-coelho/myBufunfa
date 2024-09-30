@@ -10,25 +10,24 @@ import Home from "./pages/Home";
 import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/cadastro",
-    element: <Cadastro />,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Home />,
+//   },
+//   {
+//     path: "/login",
+//     element: <Login />,
+//   },
+//   {
+//     path: "/cadastro",
+//     element: <Cadastro />,
+//   },
+// ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Navbar />
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <Login />
   </StrictMode>,
 )
