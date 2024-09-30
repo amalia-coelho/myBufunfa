@@ -1,0 +1,44 @@
+.container{
+    height: 90vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.title{
+    font-size: 35px;
+}
+
+input{
+    width: 230px;
+    height: 30px;
+    background-color: #36454F;
+
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+
+    padding-left: 15px;
+    outline: none;
+}
+
+input::selection{
+    background-color: #848884;
+}
+
+button {
+    width: 240px;
+    height: 30px;
+
+    border: solid white 1px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
