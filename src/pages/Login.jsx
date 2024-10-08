@@ -1,11 +1,8 @@
-import '../styles/Login.css';
-
-export default function Login() {
+export default function Cadastro() {
     return (
-        <div className="container">
-            <h1 className="title">$ MyBufunfa</h1>
-            <input className="inp-email" placeholder="Insira seu email..."></input>
-            <button>Entrar</button>
-        </div>
+        <>
+            <h2>Cadastro</h2>
+        </>
+
     );
 }

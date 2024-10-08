@@ -1,0 +1,15 @@
+.home-container > *{
+    padding-bottom: 15px;
+}
+
+.home-container{
+    padding: 30px;
+}
+
+.home-header{
+    width: 100%;
+}
+
+.home-list{
+    margin: 0 auto;
+}

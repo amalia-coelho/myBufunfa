@@ -28,6 +28,6 @@ import Login from "./pages/Login";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <Login />
+    <Home />
   </StrictMode>,
 )
