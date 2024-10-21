@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserNinja, faGear, faXmark, faUserGroup, faDollarSign, faSquareCheck, faCalendarDays, faBullseye, faBars } from '@fortawesome/free-solid-svg-icons';
-import '../styles/Navbar.css';
+import '../styles/components/Navbar.css';
 
 const Navbar = () => {
     const [isMinimized, setIsMinimized] = useState(true);

@@ -1,10 +1,8 @@
-import axios from 'axios';
-
 import Navbar from "../components/Navbar";
 import List from "../components/List";
 
 
-import '../styles/Home.css';
+import '../styles/pages/Home.css';
 
 export default function Home() {
     return (

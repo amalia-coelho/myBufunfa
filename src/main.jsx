@@ -1,5 +1,4 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import Navbar from "./components/Navbar";
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
@@ -7,8 +6,7 @@ import './styles/index.css'
 
 // Páginas
 import Home from "./pages/Home";
-import Cadastro from "./pages/Cadastro";
-import Login from "./pages/Login";
+import Check_email from "./pages/Check_email";
 
 // const router = createBrowserRouter([
 //   {
@@ -28,6 +26,6 @@ import Login from "./pages/Login";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <RouterProvider router={router} /> */}
-    <Home />
+    <Check_email />
   </StrictMode>,
 )

@@ -1,4 +1,4 @@
-import '../styles/List.css';
+import '../styles/components/List.css';
 import List_item from '../components/List_item';
 
 export default function List() {
